@@ -2,8 +2,9 @@ import Image from 'next/image';
 import { forwardRef } from 'react';
 import { ThumbUpIcon } from '@heroicons/react/outline';
 
+/* eslint-disable react/display-name */
 const Thumbnail = forwardRef(({ result }, ref) => {
-  const BASE_URL= 'https://image.tmdb.org/t/p/original';
+  const BASE_URL= 'https://image.tmdb.org/t/p/original/';
 
   return (
     <div
@@ -16,6 +17,8 @@ const Thumbnail = forwardRef(({ result }, ref) => {
           src={`${BASE_URL}${result.backdrop_path || result.poster_path || `${BASE_URL}${result.poster_path}`}`}
           width={1080}
           height={657}
+          alt={result.title || result.original_name}
+          title={result.title || result.original_name}
         />
       </div>
       <div className='p-2'>
@@ -32,6 +35,6 @@ const Thumbnail = forwardRef(({ result }, ref) => {
       </div>
     </div>
   );
-})
+});
 
 export default Thumbnail;

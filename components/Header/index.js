@@ -26,6 +26,8 @@ const Header = () => {
           src='/hulu-logo.png'
           width={100}
           height={100}
+          alt='Hulu'
+          title='Hulu'
         />
       </div>
     </header>
